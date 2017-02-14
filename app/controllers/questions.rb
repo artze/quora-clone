@@ -4,3 +4,8 @@ post '/questions' do
 	question.save
 	redirect '/dashboard'
 end
+
+get '/questions/:id' do
+	@question = Question.find_by(id: params[:id])
+	erb :'questions/show'
+end

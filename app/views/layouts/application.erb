@@ -23,9 +23,11 @@
 			About
 			</a>
 		</span>
+		<% if current_user(session[:id]) %>
 		<span class="title-logo">
 			Quora
 		</span>
+		<% end %>
 		<span class="username">
 			<% if current_user(session[:id]) %>
 				<%= "Welcome, #{current_user(session[:id]).username}" %>

@@ -30,7 +30,7 @@
 		<% end %>
 		<span class="username">
 			<% if current_user(session[:id]) %>
-				<%= "Welcome, #{current_user(session[:id]).username}" %>
+				Welcome, <a href="/users/<%= session[:id] %>"> <%= current_user(session[:id]).username %> </a>
 				<a href='/sessions/logout' class="logout">Logout</a>
 			<% end %>
 		</span>

@@ -12,6 +12,13 @@ post '/users' do
 	end
 end
 
+get '/users/:id' do
+	@user = User.find_by(id: params[:id])
+	erb :'users/show'
+end
+
+
+
 get '/signup/success' do
 	erb :'static/signup-success'
 end

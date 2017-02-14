@@ -20,7 +20,7 @@
 
 				</form>
 
-				<% @question.answers.order(created_at: :desc).each do |elm| %>
+				<% @answers.each do |elm| %>
 					<p><b> <%= elm.user.username %> </b></p>
 					<p> <%= elm.description %> </p>
 				<% end %>

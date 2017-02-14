@@ -1,0 +1,22 @@
+<div class="content-background-color">
+
+</div>
+
+<div class="container">
+	<div class="content">
+
+		<div class="row justify-content-center">
+			<div class="content-box col-9">
+			
+				<h1><%= @user.username %>'s Questions</h1>	
+
+				<% @questions_arr.each do |elm| %>
+					<p><a href="/questions/<%= elm.id %>"> <%= elm.title %> </a></p>
+				<% end %>
+				
+			</div>
+		</div>
+
+
+	</div>
+</div>

@@ -18,9 +18,16 @@
 	align-items: center;
 }
 
+.std-btn {
+	background-color: #FF3333;
+	color: white;
+	cursor: pointer;
+}
+
 /*===== HEADER =====*/
 
 .header {
+	text-align: center;
 	display: inline-block;
 	opacity: 0.7;
 	background-color: #FFFFFF;
@@ -34,6 +41,7 @@
 }
 
 span.header-links {
+	float: left;
 	margin-left: 2em;
 	font-size: 14px
 }
@@ -45,6 +53,12 @@ span.username {
 
 a.logout {
 	margin-left: 2em;
+}
+
+span.title-logo {
+	font-family: 'Vollkorn', serif;
+	font-size: 24px;
+	color: #FF3333;
 }
 
 /* ===== LOGIN ===== */
@@ -73,4 +87,38 @@ a.logout {
 
 #invalid-login {
 	color: #FF3333;
+}
+
+/*===== CONTENT =====*/
+
+.content-background-color {
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	background-color: #8FCAD9;
+	max-width: 100%;
+	display: block;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	right: 0;
+	-webkit-filter: blur(4px);
+}
+
+.content {
+	padding-top: 40px;
+}
+
+.question-form-box {
+	border: 0px solid;
+	box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.75);
+	background-color: #FAFAFA;
+	padding-top: 10px;
+}
+
+.content-box {
+	margin-top: 0px;
+	border: 0px solid;
+	box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.75);
+	background-color: #FAFAFA;
+	min-height: 100%;
 }

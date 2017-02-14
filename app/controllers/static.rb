@@ -4,5 +4,9 @@ end
 
 
 get '/dashboard' do
-	erb :'static/dashboard'
+	if current_user(session[:id])
+		erb :'static/dashboard'
+	else
+		"you need to be logged in to view this page"
+	end
 end

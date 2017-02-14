@@ -1,19 +1,69 @@
-<div class="background-img">
-	<img src="/img/wave.jpg">
-</div>
-
-<div class="vertical-center">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div id="login-header">
-				Quora
+<div class="modal fade" id="post-question-modal" tabindex="-1" role="dialog" aria-labelledby="post-question-title" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="post-question-title">Ask Quora</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
-		</div>
 
-		<div class="row justify-content-center">
-			<div class="login-form-box col-4">
-				<h5><%= "Hello, #{current_user(session[:id]).username}" %></h5>
-			</div>
+			<form action="/questions" method="POST">
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" class="form-control" name="question-title" placeholder="Question Title">
+					</div>
+
+					<div class="form-group">
+						<textarea rows="5" class="form-control" name="question-description" placeholder="Enter question here"></textarea>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn std-btn">Post</button>
+				</div>
+
+			</form>
+
 		</div>
 	</div>
 </div>
+
+<div class="content-background-color">
+
+</div>
+
+<div class="container">
+	<div class="content">
+
+		<div class="row justify-content-center">
+			<div class="content-box col-9">
+
+				<a href="#" data-toggle="modal" data-target="#post-question-modal">Ask Quora</a>
+
+				<% Question.all.order(created_at: :desc).each do |elm| %>
+				<%= "<p> #{elm.title} </p>" %>
+				<%= "<p> #{elm.description} </p>" %>
+				<% end %>
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

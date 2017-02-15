@@ -1,0 +1,15 @@
+<% @answers.each do |elm| %>
+	<p><b> <%= elm.user.username %> </b></p>
+	<p> <%= elm.description %> </p>
+
+	<form action="/answers/<%= elm.id %>/answer_votes?val=1" method="POST" class="vote-form-inline">
+		<button type="submit" class="btn vote-btn">&#708;</button>
+		<%= AnswerVote.where(answer_id: elm.id, votes: true).count(:votes) %>
+	</form>
+
+	<form action="/answers/<%= elm.id %>/answer_votes?val=0" method="POST" class="vote-form-inline">
+		<button type="submit" class="btn vote-btn">&#709;</button>
+		<%= AnswerVote.where(answer_id: elm.id, votes: false).count(:votes) %>
+	</form>
+
+<% end %>

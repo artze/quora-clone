@@ -10,6 +10,16 @@
 				<p><b><%= @question.title %></b></p>
 				<p><%= @question.description %></p>
 
+				<form action="/questions/<%= @question.id %>/question_votes?val=1" method="POST" class="vote-form-inline">
+					<button type="submit" class="btn vote-btn">&#708;</button>
+					<%= QuestionVote.where(question_id: @question.id, votes: true).count(:votes) %>
+				</form>
+
+				<form action="/questions/<%= @question.id %>/question_votes?val=0" method="POST" class="vote-form-inline">
+					<button type="submit" class="btn vote-btn">&#709;</button>
+					<%= QuestionVote.where(question_id: @question.id, votes: false).count(:votes) %>
+				</form>
+
 				<form action="/questions/<%= @question.id %>/answers" method="POST">
 
 						<div class="form-group">
@@ -20,10 +30,7 @@
 
 				</form>
 
-				<% @answers.each do |elm| %>
-					<p><b> <%= elm.user.username %> </b></p>
-					<p> <%= elm.description %> </p>
-				<% end %>
+				<%= erb :'/questions/show_answers', :layout => false %>
 
 			</div>
 		</div>

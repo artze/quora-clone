@@ -122,3 +122,11 @@ span.title-logo {
 	background-color: #FAFAFA;
 	min-height: 100%;
 }
+
+.vote-form-inline {
+	display: inline;
+}
+
+.vote-btn {
+	cursor: pointer;
+}

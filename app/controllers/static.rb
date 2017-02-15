@@ -9,7 +9,9 @@ end
 
 get '/dashboard' do
 	if current_user(session[:id])
-		@all_questions = Question.all.order(created_at: :desc)
+
+		@all_questions = Question.all.order(updated_at: :desc)
+
 		erb :'static/dashboard'
 	else
 		"you need to be logged in to view this page"
